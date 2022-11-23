@@ -53,4 +53,4 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory) --no-build'
 
 - task: PublishBuildArtifacts@1 # Create the articaft from publish
-  displayName: 'Payroll - $(Build.BuildNumber)'
+  displayName: 'Payroll-$(Build.BuildNumber)'
