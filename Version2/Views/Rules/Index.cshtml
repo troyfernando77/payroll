@@ -1,0 +1,39 @@
+﻿@using Version2.Data.Models
+@model IEnumerable<RulesDto>
+
+    @Html.ActionLink("Create", "CreateorEdit", "Rules", new { id=0,category= ViewBag.category })
+    @{
+
+        foreach (var message in Model)
+        {
+
+            <div class="row">
+                <div class="col-md-1">
+                    @message.ItemNo
+                </div>
+                <div class="col-md-1">
+                    @message.RuleName
+                </div>
+                <div class="col-md-1">
+                    @message.Category
+                </div>
+                @if (@message.Category!="Main")
+                {
+                <div class="col-md-1">
+                    @message.Priority
+                </div>
+                }
+                <div class="col-md-1">
+                    @message.RuleTarget
+                </div>
+                <div class="col-md-1">
+                    @message.Status
+                </div>
+                <div class="col-md-2">
+                    @Html.ActionLink("Edit", "CreateorEdit", "Rules", new { message.Id })
+                    @Html.ActionLink("Delete", "Delete", "Rules", new { id=message.Id,category=message.Category }, new { onclick = "return confirm('Are you sure you want to delete this Message?')" })
+
+                </div>
+            </div>
+        }
+    }

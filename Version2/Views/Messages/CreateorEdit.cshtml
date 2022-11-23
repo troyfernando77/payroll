@@ -1,0 +1,33 @@
+﻿@using Version2.Data.Models
+@model CreateorEditMessagesDto
+    @using (Html.BeginForm("Save", "Messages", FormMethod.Post))
+    {
+        @Html.Hidden("Id", Model.Id)
+        <div class="row">
+            <div class="col-md-2">
+                Messages Code :
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="MessageCode" value="@Model.MessageCode" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Messages :
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="Message"  value="@Model.Message" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+               
+            </div>
+            <div class="col-md-6">
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+    }
+   
+
+

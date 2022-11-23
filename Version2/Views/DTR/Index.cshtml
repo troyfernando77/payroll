@@ -1,0 +1,65 @@
+﻿@using Version2.Data.Models
+@model IEnumerable<DTRDto>
+
+<a href="DTR/CreateorEdit">Create</a>
+
+    <table class="table table-bordered" style="font-size:small">
+        <thead>
+        <tr>
+            <th scope="col">Employee</th>
+            <th scope="col">TimeIn</th>
+            <th scope="col">TimeOut</th>
+            <th scope="col">Hours</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Amount</th>
+            <th scope="col">OT</th>
+            <th scope="col">Total</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+   
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td class="col-md-3 ">
+                    @employee.EmployeeName
+                </td>
+                <td class="col-md-2">
+                    @employee.TimeIn.ToString("MM/dd/yyyy hh:mm")
+                </td>
+                <td class="col-md-2">
+                    @employee.TimeOut.ToString("MM/dd/yyyy hh:mm")
+                </td>
+                <td class="col-md-1" align="right">
+                    @employee.TotalHours 
+                </td>
+                <td class="col-md-1" align="right">
+                    @employee.Rate.RateHr.ToString("N2") 
+                </td>
+                <td class="col-md-1" align="right">
+                    @employee.Amount.ToString("N2")
+                </td>
+                <td class="col-md-1" align="right">
+                    @employee.OTAmount.ToString("N2")
+                </td>
+                <td class="col-md-1" align="right">
+                    @employee.NetPay.ToString("N2")
+                </td>
+                <td class="col-md-1" align="center">
+                    <a href=@Url.ActionLink("CreateorEdit", "DTR", new { employee.Id } )>
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>  
+                </td>
+                <td class ="col-md-1" align="center">
+                    <a href=@Url.ActionLink("Delete", "DTR", new { employee.Id })
+                        onclick="return confirm('Are you sure you want to delete this Message?')">
+                        <i class="fa fa-trash" style="color:red" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+ 

@@ -1,0 +1,75 @@
+﻿@using Version2.Data.Models
+@model DTRDto[]
+@using (Html.BeginForm("SaveDTRs", "DTRSummary", FormMethod.Post, new { DTRHeadId = @ViewBag.DTRHeadId }))
+{
+   
+    <table class="table table-bordered" style="font-size:small">
+        <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Employee</th>
+                <th scope="col">TimeIn</th>
+                <th scope="col">TimeOut</th>
+                <th scope="col">Hours</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Amount</th>
+                <th scope="col">OT</th>
+                <th scope="col">Total</th>
+            
+             
+            </tr>
+        </thead>
+        <tbody>
+
+            <input type="hidden" name="DTRHeadId" value=@ViewBag.DTRHeadId >
+            @for (var i = 0; i < Model.Count(); i++)
+            {
+                @Html.HiddenFor(m=>m[i].Id)
+              
+                <tr>
+                    <td>
+                        @Html.CheckBoxFor(m=>m[i].isChecked)
+                    </td>
+                    <td class="col-md-3 ">
+                        @Model[i].EmployeeName
+                    </td>
+                    <td class="col-md-2">
+                        @Model[i].TimeIn.ToString("MM/dd/yyyy hh:mm")
+                    </td>
+                    <td class="col-md-2">
+                        @Model[i].TimeOut.ToString("MM/dd/yyyy hh:mm")
+                    </td>
+                    <td class="col-md-1" align="right">
+                        @Model[i].TotalHours
+                    </td>
+                    <td class="col-md-1" align="right">
+                        @Model[i].Rate.RateHr.ToString("N2")
+                    </td>
+                    <td class="col-md-1" align="right">
+                        @Model[i].Amount.ToString("N2")
+                    </td>
+                    <td class="col-md-1" align="right">
+                        @Model[i].OTAmount.ToString("N2")
+                    </td>
+                    <td class="col-md-1" align="right">
+                        @Model[i].NetPay.ToString("N2")
+                    </td>
+               
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="10">
+                    <div class="row">
+                        <div class="col-9"></div>
+                        <div class="col-3">
+                            <input type="submit" value="Save" /> 
+                            <input type="button" value="Cancel" /></div>
+                    
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+} 

@@ -1,0 +1,79 @@
+﻿@using Version2.Data.Models
+@Html.ActionLink("Add DTR","AddDTR", "DTRSummary", new { DTRHEadId= ViewBag.DTRHEadId}  )
+<div class="row">
+<div class="col-md-4">
+        <div id="employees">
+
+        </div>
+    </div>
+<div class="col-md-7" >
+        <div id="dtrdetail"  >
+            
+        </div>
+</div>
+</div>
+ 
+   
+ 
+ 
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) 
+    {
+       showEmployee()
+       selectEmployee(0)
+    });
+    
+    function selectEmployee(id)
+    {
+        $.ajax({
+            url: '/DTRSummary/Select?dtrsummaryid= ' + id,
+            dataType: "html",
+            type: "GET",
+            contentType: "application/html; charset=utf-8",
+            success: function (result) {
+                $("#dtrdetail").html(result);
+                showEmployee(id)
+            },
+            error: function (xhr) {
+                alert("error");
+            }
+        });
+        
+    }
+    function showEmployee() 
+    {
+        var param = window.location.search.indexOf("=") + 1
+        var dtrheadid = window.location.search.substring(param)
+        $.ajax({
+            url: '/DTRSummary/ShowEmployees?dtrheadid=' + dtrheadid,
+            dataType: "html",
+            type: "GET",
+            contentType: "application/html; charset=utf-8",
+            success: function (result) {
+                $("#employees").html(result);
+            },
+            error: function (xhr) {
+                alert("error");
+            }
+        });
+    }
+
+    function deleteEmployee(dtrid, DTRSummaryId) 
+    {
+        $.ajax({
+            url: '/DTRSummary/DeleteDTR?dtrid= ' + dtrid + '&DTRSummaryId=' + DTRSummaryId,
+            dataType: "html",
+            type: "GET",
+            contentType: "application/html; charset=utf-8",
+            success: function (result) 
+            {
+                $("#dtrdetail").html(result);
+                showEmployee()
+            },
+            error: function (xhr) {
+                alert("error");
+            }
+        });
+    }
+     
+</script>

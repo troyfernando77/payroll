@@ -1,0 +1,13 @@
+C:\Users\troy\source\repos\Version2\Version2.Framework\bin\Debug\netcoreapp3.1\Version2.Framework.deps.json
+C:\Users\troy\source\repos\Version2\Version2.Framework\bin\Debug\netcoreapp3.1\Version2.Framework.dll
+C:\Users\troy\source\repos\Version2\Version2.Framework\bin\Debug\netcoreapp3.1\Version2.Framework.pdb
+C:\Users\troy\source\repos\Version2\Version2.Framework\bin\Debug\netcoreapp3.1\Version2.Data.dll
+C:\Users\troy\source\repos\Version2\Version2.Framework\bin\Debug\netcoreapp3.1\Version2.Data.pdb
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.csproj.AssemblyReference.cache
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.AssemblyInfoInputs.cache
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.AssemblyInfo.cs
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.csproj.CoreCompileInputs.cache
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.csproj.CopyComplete
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.dll
+C:\Users\troy\source\repos\Version2\Version2.Framework\obj\Debug\netcoreapp3.1\Version2.Framework.pdb

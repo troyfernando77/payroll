@@ -1,0 +1,10 @@
+C:\Users\troy\source\repos\Version2\Version2.Data\bin\Debug\netcoreapp3.1\Version2.Data.deps.json
+C:\Users\troy\source\repos\Version2\Version2.Data\bin\Debug\netcoreapp3.1\Version2.Data.dll
+C:\Users\troy\source\repos\Version2\Version2.Data\bin\Debug\netcoreapp3.1\Version2.Data.pdb
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.csproj.AssemblyReference.cache
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.AssemblyInfoInputs.cache
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.AssemblyInfo.cs
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.csproj.CoreCompileInputs.cache
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.dll
+C:\Users\troy\source\repos\Version2\Version2.Data\obj\Debug\netcoreapp3.1\Version2.Data.pdb

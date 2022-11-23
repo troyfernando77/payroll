@@ -1,0 +1,43 @@
+﻿@using Version2.Data.Models
+@model CreateorEditDTRDto
+    @using (Html.BeginForm("Save", "DTR", FormMethod.Post))
+    {
+        @Html.Hidden("Id", Model.Id)
+        <div class="row">
+            <div class="col-md-2">
+                Employee  Code:
+            </div>
+            <div class="col-md-6">
+            <input type="text" name="EmployeeId" value="@Model.EmployeeId" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Employee Time In :
+            </div>
+            <div class="col-md-6">
+            <input type="datetime" name="TimeIn" value="@Model.TimeIn" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Employee Time Out :
+            </div>
+            <div class="col-md-6">
+            <input type="datetime" name="TimeOut" value="@Model.TimeOut" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+               
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Save" />
+                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "DTR" )>Cancel</a>    
+            </div>
+            
+        </div>
+    }
+   
+
+

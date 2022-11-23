@@ -1,0 +1,38 @@
+﻿@using Version2.Data.Models
+@model CreateorEditDTRSummaryDto
+    @using (Html.BeginForm("Save", "DTRSummary", FormMethod.Post))
+    {
+        @Html.Hidden("Id", Model.Id)
+        @Html.Hidden("DTRHeadId", Model.DTRHeadId)
+
+        <div class="row">
+            <div class="col-md-2">
+                Employee  Code:
+            </div>
+            <div class="col-md-6">
+            <input type="text" name="EmployeeId" value="@Model.EmployeeId" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Amounr :
+            </div>
+            <div class="col-md-6">
+            <input type="datetime" name="Amount" value="@Model.Amount" required />
+            </div>
+        </div>
+   
+        <div class="row">
+            <div class="col-md-2">
+               
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Save" />
+                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "DTR" )>Cancel</a>    
+            </div>
+            
+        </div>
+    }
+   
+
+

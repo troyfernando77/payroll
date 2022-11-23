@@ -1,0 +1,32 @@
+﻿@using Version2.Data.Models
+@model IEnumerable<DTRSummaryDto>
+<table class="table table-bordered table-sm" style="font-size:small">
+    <thead>
+        <tr>
+            <th scope="col">Employee</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dTRSummary in Model)
+        {
+            <tr class=
+                @{
+                    if (@dTRSummary.Id.ToString()==TempData["selected"].ToString())
+                    {
+                        Write( "table-primary");
+                    }
+                }>
+                <td class="col-md-3 ">
+                    @dTRSummary.EmployeeId
+                </td>
+                <td class="col-md-1" align="right">
+                    @dTRSummary.Amount.ToString("N2")
+                </td>
+                <td class="col-md-1" align="center">
+                    <input id="Button1" type="button" value="Select" onclick="selectEmployee(@dTRSummary.Id)" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

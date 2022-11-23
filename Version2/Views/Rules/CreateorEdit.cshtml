@@ -1,0 +1,98 @@
+﻿@using Version2.Data.Models
+@model CreateorEditRulesDto
+@using (Html.BeginForm("Save", "Rules", FormMethod.Post))
+{
+    @Html.Hidden("Id", Model.Id)
+
+
+    <div class="row">
+        <div class="col-md-2">
+            Item No :
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="ItemNo" value="@Model.ItemNo" />
+        </div>
+    </div>
+
+   
+    @if (Model.Category == "Main")
+    {
+
+        <div class="row">
+            <div class="col-md-2">
+                Rule Name :
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="RuleName" value="@Model.RuleName" />
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-2">
+                Rule Name :
+            </div>
+            <div class="col-md-6">
+                @Html.DropDownListFor(
+                   model => model.RuleName,
+                   (List<SelectListItem>)ViewBag.RuleNames)
+            </div>
+        </div>
+
+    }
+    <div class="row">
+        <div class="col-md-2">
+            Target :
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="RuleTarget" value="@Model.RuleTarget" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            Category :
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="Category" value="@Model.Category" readonly />
+        </div>
+    </div>
+    @if (Model.Category != "Main")
+    {
+        <div class="row">
+            <div class="col-md-2">
+                Priority :
+            </div>
+            <div class="col-md-6">
+                <input type="number" name="Priority" value="@Model.Priority" />
+            </div>
+        </div>
+    }
+    <div class="row">
+
+        <div class="col-md-2">
+            Active Status :
+        </div>
+        <div class="col-md-6">
+            @Html.DropDownListFor(
+            model => model.Status,
+            (List<SelectListItem>)ViewBag.statuslist)
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-6">
+            <input type="submit" value="Save" />
+        </div>
+        <div class="col-md-6">
+            @Html.ActionLink("Cancel", "RedirectToActionResult", "Rules", new { category= Model.Category })
+        </div>
+    </div>
+}
+
+

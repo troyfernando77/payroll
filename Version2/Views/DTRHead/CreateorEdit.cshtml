@@ -1,0 +1,36 @@
+﻿@using Version2.Data.Models
+@model CreateorEditDTRHeadDTO
+    @using (Html.BeginForm("Save", "DTRHead", FormMethod.Post))
+    {
+        @Html.Hidden("Id", Model.Id)
+        <div class="row">
+            <div class="col-md-2">
+                Employee  Code:
+            </div>
+            <div class="col-md-2">
+            <input type="datetime" name="Startdate" value="@Model.Startdate" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                Employee Time In :
+            </div>
+            <div class="col-md-6">
+            <input type="datetime" name="Cutoffdate" value="@Model.Cutoffdate" required />
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-2">
+               
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Save" />
+                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "DTRHead" )>Cancel</a>    
+            </div>
+            
+        </div>
+    }
+   
+
+

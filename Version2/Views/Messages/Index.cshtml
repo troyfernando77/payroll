@@ -1,0 +1,28 @@
+﻿@using Version2.Data.Models
+@model IEnumerable<MessagesDto>
+
+<a href="Messages/CreateorEdit">Create</a>
+@{
+
+    foreach (var message in Model)
+    {
+   
+    <div class="row">
+        <div class="col-md-2">
+            @message.Id
+        </div>
+        <div class="col-md-2">
+            @message.MessageCode
+        </div>
+        <div class="col-md-4">
+            @message.Message
+        </div>
+        <div class="col-md-2">
+            @Html.ActionLink("Edit", "CreateorEdit", "Messages", new { message.Id })
+            @Html.ActionLink("Delete", "Delete", "Messages",    new { message.Id }, 
+            new { onclick = "return confirm('Are you sure you want to delete this Message?')" })
+             
+        </div>
+    </div>
+    }
+}
