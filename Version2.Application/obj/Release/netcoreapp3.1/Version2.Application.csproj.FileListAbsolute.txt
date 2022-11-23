@@ -1,0 +1,15 @@
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Application.deps.json
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Application.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Application.pdb
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Data.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Framework.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Data.pdb
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\bin\Release\netcoreapp3.1\Version2.Framework.pdb
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.csproj.AssemblyReference.cache
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.AssemblyInfoInputs.cache
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.AssemblyInfo.cs
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.csproj.CoreCompileInputs.cache
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.csproj.CopyComplete
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Application\obj\Release\netcoreapp3.1\Version2.Application.pdb
