@@ -786,3 +786,4 @@ C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.cs
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.pdb
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.genruntimeconfig.cache
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\GetEmployees\GetEmployees.cshtml.g.cs

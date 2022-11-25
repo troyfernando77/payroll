@@ -26,12 +26,20 @@ namespace Version2.Controllers
             return View(await this._DTRAppService.GetAll());
         }
    
-        public IActionResult CreateorEdit(int id=0)
-        {
-             
-            var  createorEditDTRDto = _DTRAppService.createorEditDto(id);
-            return View(createorEditDTRDto);
+        public IActionResult CreateorEdit(CreateorEditDTRDto input)
+        {       
+
+            if (input.Id>0)
+                input = _DTRAppService.createorEditDto(input.Id);
+            return View(input);
         }
+        public IActionResult SelectEmployee(EmployeeDto employee)
+        {
+            var dtr = new CreateorEditDTRDto();
+            dtr.EmployeeId = employee.EmployeeId;
+            return RedirectToAction("CreateorEdit", dtr );
+        }
+
         public async Task<RedirectToActionResult> Delete(int id)
         {
             await _DTRAppService.Delete(id);

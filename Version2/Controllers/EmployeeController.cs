@@ -40,5 +40,10 @@ namespace Version2.Controllers
             await _EmployeeAppService.CreateorEdit(msg);
             return RedirectToAction("Index");
         }
+        public async Task<PartialViewResult> GetEmployees(int dtrheadid)
+        {
+            var employees = await this._EmployeeAppService.GetAll();
+            return PartialView(employees);
+        }
     }
 }
