@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "f8CHdYoL7HqXrTiP0k1LgJmMJ9iprGD6ItOiq9ZKO7UZHefcElALQOUmSseigVRVX+Mk9Mn+Zem2YtIrDxU+ZA==",
+  "dgSpecHash": "ixO+9wc7ZWcxsF4OSeWZBsXUT8peR0h7SaEHGQGHA9fa7jMVkTHdUj7U4PNW7OLx0PWsXVqvkmHgf55qJ6QUlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\troy\\repos\\Payroll\\payroll\\Version2\\Version2.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\troy\\.nuget\\packages\\aspnetcore.unobtrusive.ajax\\2.0.0\\aspnetcore.unobtrusive.ajax.2.0.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\troy\\.nuget\\packages\\jquery\\1.4.4\\jquery.1.4.4.nupkg.sha512",
+    "C:\\Users\\troy\\.nuget\\packages\\jquery.ajax.unobtrusive\\2.0.20710\\jquery.ajax.unobtrusive.2.0.20710.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.30\\microsoft.aspnetcore.mvc.razor.extensions.3.1.30.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.30\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.30.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.30\\microsoft.aspnetcore.razor.language.3.1.30.nupkg.sha512",
@@ -32,11 +35,14 @@
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.31\\microsoft.extensions.dependencyinjection.3.1.31.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.25\\microsoft.extensions.dependencymodel.3.1.25.nupkg.sha512",
+    "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.22\\microsoft.extensions.fileproviders.abstractions.3.1.22.nupkg.sha512",
+    "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\3.1.22\\microsoft.extensions.fileproviders.embedded.3.1.22.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.logging\\3.1.31\\microsoft.extensions.logging.3.1.31.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.31\\microsoft.extensions.logging.abstractions.3.1.31.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
+    "C:\\Users\\troy\\.nuget\\packages\\microsoft.jquery.unobtrusive.ajax\\2.0.20710\\microsoft.jquery.unobtrusive.ajax.2.0.20710.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
@@ -108,5 +114,16 @@
     "C:\\Users\\troy\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\troy\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "jQuery.Ajax.Unobtrusive 2.0.20710 depends on Microsoft.jQuery.Unobtrusive.Ajax (>= 2.0.20613) but Microsoft.jQuery.Unobtrusive.Ajax 2.0.20613 was not found. An approximate best match of Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710 was resolved.",
+      "libraryId": "Microsoft.jQuery.Unobtrusive.Ajax",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

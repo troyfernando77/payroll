@@ -1,75 +1,83 @@
 ﻿@using Version2.Data.Models
 @model CreateorEditEmployeeDto
-<button id="btnShowModal" type="button"  
-                           class="btn btn-sm btn-default pull-left col-lg-11 button button4">  
-                       Satya Modals  
-                   </button> 
-<div class="modal" tabindex="-1"   id="loginModal">
-    <div class="modal-dialog" >
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-               @* @using (Html.BeginForm("Save", "Employee", FormMethod.Post))
-                {
-                    @Html.Hidden("Id", Model.Id)
-                    <div class="row">
-                        <div class="col-md-2">
-                            Employee Code :
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="EmployeeId" value="@Model.EmployeeId" required />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            Employee Name :
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="EmployeeName" value="@Model.EmployeeName" required />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                            Rate :
-                        </div>
-                        <div class="col-md-6">
-                            <input type="number" name="Rate" value="@Model.Rate" required />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-2">
-                            <input class="btn btn-primary" type="submit" value="Save" />
-                            <a class="btn btn-danger" href=@Url.ActionLink( "Index", "Employee" )>Cancel</a>
-                        </div>
-
-                    </div>
-                }*@
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+ 
+@using (Html.AjaxBeginForm("Save", "Employee", new AjaxOptions
+{
+    OnFailure="OnFailure",
+     OnSuccess = "OnSuccess"
+}  
+ ))
+{
+    @Html.Hidden("Id", Model.Id)
+    <div class="form-group">
+    <div class="row">
+        <div class="col-md-1">
+                <label class="form-label" >Number  </label>
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="text" name="EmployeeId" value="@Model.EmployeeId" required />
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col-md-1">
+            Name  
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="text" id="EmployeeName" name="EmployeeName" value="@Model.EmployeeName" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            Company
+        </div>
+        <div class="col-md-6">
+                @await Component.InvokeAsync("CompanyDropdown", new { companyselected =Model.Company})
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            Department
+        </div>
+        <div class="col-md-6">
+                <input class="form-control" type="text" id="Department" name="Department" value="@Model.Department" required />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            Rate 
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" type="number" id="Rate" name="Rate" value="@Model.Rate" required />
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <div id="result" class="alert-danger"></div>
+            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-3">
+            <input class="btn btn-primary" type="submit" value="Save" />
+            <a class="btn btn-danger" href=@Url.ActionLink( "Index", "Employee" )>Cancel</a>
+        </div>
 
-<script>
-    $(document).ready(function () {
-         
-           alert('t');
-        })
+    </div>
+   </div>
+}
+            
+<script type="text/javascript">
 
-        
- 
+    function OnFailure(response) {
+        $('#result').text(response.responseText);
+    }
+    function OnSuccess(response) {
+        window.location.href = "@Url.ActionLink( "Index", "Employee" )"
+    }
 </script>
-
 
 
 

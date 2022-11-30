@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Payroll.Framework;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,8 +48,10 @@ namespace Version2.Application
         }
         protected async Task Create(CreateorEditEmployeeDto input)
         {
-            var messages = _mapper.Map<Employee>(input);
-            await _EmployeeRepository.Add(messages);
+            //var messages = _mapper.Map<Employee>(input);
+            var employee = Employee.Create(input.EmployeeId, input.EmployeeName,
+                input.Rate, input.Company);
+            await _EmployeeRepository.Add(employee.Value);
             await Complete();
         }
         protected async Task Update(CreateorEditEmployeeDto input)
@@ -87,10 +90,12 @@ namespace Version2.Application
                                        Id = a.Id,
                                        EmployeeId = a.EmployeeId,
                                        EmployeeName = a.EmployeeName,
-                                       Rate = a.Rate 
+                                       Rate = a.Rate ,
+                                       Company = a.Company,
+                                       Department = a.Department
 
                                   };
-            return categorydtolist.ToList();
+            return await categorydtolist.ToListAsync();
         }
         public async Task Complete()
         {

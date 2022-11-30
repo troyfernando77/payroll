@@ -1,9 +1,9 @@
 ﻿@using Version2.Data.Models
 @model IEnumerable<DTRDto>
 
-<a href="DTR/CreateorEdit">Create</a>
+<a href="DTR/CreateorEdit">Add Time In/Out</a>
 
-    <table class="table table-bordered" style="font-size:small">
+<table class="table table-bordered table-sm small">
         <thead>
         <tr>
             <th scope="col">Employee</th>
@@ -12,8 +12,6 @@
             <th scope="col">Hours</th>
             <th scope="col">Rate</th>
             <th scope="col">Amount</th>
-            <th scope="col">OT</th>
-            <th scope="col">Total</th>
             <th scope="col"></th>
             <th scope="col"></th>
             </tr>
@@ -41,12 +39,7 @@
                 <td class="col-md-1" align="right">
                     @employee.Amount.ToString("N2")
                 </td>
-                <td class="col-md-1" align="right">
-                    @employee.OTAmount.ToString("N2")
-                </td>
-                <td class="col-md-1" align="right">
-                    @employee.NetPay.ToString("N2")
-                </td>
+ 
                 <td class="col-md-1" align="center">
                     <a href=@Url.ActionLink("CreateorEdit", "DTR", new { employee.Id } )>
                         <i class="fa fa-pencil" aria-hidden="true"></i>

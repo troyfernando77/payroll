@@ -1,0 +1,53 @@
+﻿@using Version2.Data.Models
+@model CreateorEditCompanyDto
+
+@using (Html.AjaxBeginForm("Save", "Company", new AjaxOptions
+ {
+     OnFailure = "OnFailure",
+     OnSuccess = "OnSuccess"    
+ }
+))
+{
+    @Html.Hidden("Id", Model.Id)
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1">
+                <label class="form-label">Name  </label>
+            </div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="Name" value="@Model.Name" required />
+            </div>
+        </div>
+         
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <div id="result" class="alert-danger"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Save" />
+                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "Company" )>Cancel</a>
+            </div>
+
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    function OnFailure(response) {
+        $('#result').text(response.responseText);
+    }
+    function OnSuccess(response) {
+        window.location.href = "@Url.ActionLink( "Index", "Company" )"
+    }
+</script>
+
+
+
+

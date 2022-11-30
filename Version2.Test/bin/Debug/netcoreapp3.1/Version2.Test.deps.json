@@ -124,9 +124,7 @@
           "Microsoft.Extensions.Configuration.Xml": "3.1.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "3.1.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "3.1.0.0",
-          "Microsoft.Extensions.FileProviders.Embedded": "3.1.0.0",
           "Microsoft.Extensions.FileProviders.Physical": "3.1.0.0",
           "Microsoft.Extensions.FileSystemGlobbing": "3.1.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "3.1.0.0",
@@ -310,6 +308,20 @@
           "Version2.Test.dll": {}
         }
       },
+      "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "3.1.22"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll": {}
+        }
+      },
       "AutoMapper/12.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0"
@@ -340,6 +352,12 @@
         }
       },
       "coverlet.collector/3.0.2": {},
+      "jQuery/1.4.4": {},
+      "jQuery.Ajax.Unobtrusive/2.0.20710": {
+        "dependencies": {
+          "Microsoft.jQuery.Unobtrusive.Ajax": "2.0.20710"
+        }
+      },
       "Microsoft.AspNetCore.Mvc.Razor.Extensions/3.1.30": {
         "dependencies": {
           "Microsoft.AspNetCore.Razor.Language": "3.1.30",
@@ -760,6 +778,34 @@
           "lib/netstandard2.0/Microsoft.Extensions.DependencyModel.dll": {}
         }
       },
+      "Microsoft.Extensions.FileProviders.Abstractions/3.1.22": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57103"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/3.1.22": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.22"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "assemblyVersion": "3.1.22.0",
+            "fileVersion": "3.100.2221.57103"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll": {}
+        }
+      },
       "Microsoft.Extensions.Logging/3.1.31": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Binder": "3.1.31",
@@ -833,6 +879,11 @@
             "assemblyVersion": "3.0.8.0",
             "fileVersion": "3.0.8.0"
           }
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/2.0.20710": {
+        "dependencies": {
+          "jQuery": "1.4.4"
         }
       },
       "Microsoft.NET.Test.Sdk/16.9.4": {
@@ -2233,6 +2284,7 @@
       "xunit.runner.visualstudio/2.4.3": {},
       "Version2/1.0.0": {
         "dependencies": {
+          "AspNetCore.Unobtrusive.Ajax": "2.0.0",
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.30",
@@ -2240,7 +2292,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.0.3",
           "Version2.Application": "1.0.0",
           "Version2.Data": "1.0.0",
-          "Version2.Framework": "1.0.0"
+          "Version2.Framework": "1.0.0",
+          "jQuery.Ajax.Unobtrusive": "2.0.20710"
         },
         "runtime": {
           "Version2.dll": {}
@@ -2815,21 +2868,9 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/3.1.0.0": {
-        "compile": {
-          "Microsoft.Extensions.FileProviders.Abstractions.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.Extensions.FileProviders.Composite/3.1.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Composite.dll": {}
-        },
-        "compileOnly": true
-      },
-      "Microsoft.Extensions.FileProviders.Embedded/3.1.0.0": {
-        "compile": {
-          "Microsoft.Extensions.FileProviders.Embedded.dll": {}
         },
         "compileOnly": true
       },
@@ -3891,6 +3932,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hFzcqL7PWw1shrtFlm/2vUlToGruTXSijq60M4FI+0C5KKI+q2oRk0InPcO8jyuC9/nEtsLX20D1sDwhLNFeNw==",
+      "path": "aspnetcore.unobtrusive.ajax/2.0.0",
+      "hashPath": "aspnetcore.unobtrusive.ajax.2.0.0.nupkg.sha512"
+    },
     "AutoMapper/12.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3911,6 +3959,20 @@
       "sha512": "sha512-iBvPAIDaI7j/iMx/DzCGCJ3rdiOmel9VINEfaTiBv/NKIGHOP4X3hqc6Q1wgMtArEshlhXexQknP17SK4vXb1w==",
       "path": "coverlet.collector/3.0.2",
       "hashPath": "coverlet.collector.3.0.2.nupkg.sha512"
+    },
+    "jQuery/1.4.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
+      "path": "jquery/1.4.4",
+      "hashPath": "jquery.1.4.4.nupkg.sha512"
+    },
+    "jQuery.Ajax.Unobtrusive/2.0.20710": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pi9soMRdzL30AMb/gXPLjTLzjYs3/Ac0S51h4M28Iyc4rYQ4ln1fZxPTEmEbnUYRZzuP2b5P2saBq9llJ1e1tg==",
+      "path": "jquery.ajax.unobtrusive/2.0.20710",
+      "hashPath": "jquery.ajax.unobtrusive.2.0.20710.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Razor.Extensions/3.1.30": {
       "type": "package",
@@ -4087,6 +4149,20 @@
       "path": "microsoft.extensions.dependencymodel/3.1.25",
       "hashPath": "microsoft.extensions.dependencymodel.3.1.25.nupkg.sha512"
     },
+    "Microsoft.Extensions.FileProviders.Abstractions/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bb7fvafHZkCURAbDkDcizqqYfuRb7/wpwraEisxMxqHwMUMNUaGZGO7+PPa5FJCiycgzdlF3zbKbecZUufJU3g==",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.1.22",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.3.1.22.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/3.1.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4hTeyTOT11sAxbYpvWa0C5AztrcdQTOUdhWN+NW+G3UPVaUziF/JIQWBW/yE2dy5zXJJW9MTYgAsNPtAFH79EA==",
+      "path": "microsoft.extensions.fileproviders.embedded/3.1.22",
+      "hashPath": "microsoft.extensions.fileproviders.embedded.3.1.22.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/3.1.31": {
       "type": "package",
       "serviceable": true,
@@ -4121,6 +4197,13 @@
       "sha512": "sha512-9E1gXBRJta8+UXooYpJkp/8g6Cy4kFQl3iURduGhR7/vU8rGKTWEMJ3tUKOO2m1qzJOfaog/n89lyjdi7S56Rg==",
       "path": "microsoft.identity.client/3.0.8",
       "hashPath": "microsoft.identity.client.3.0.8.nupkg.sha512"
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/2.0.20710": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qe7300U7GFkYuncm2cCR/Lj8xexvYlGYIjvb857N1oLpGXUmHIqmWl7cCajV0BkQ0V+jRqadfqf2znLsAZ3KLg==",
+      "path": "microsoft.jquery.unobtrusive.ajax/2.0.20710",
+      "hashPath": "microsoft.jquery.unobtrusive.ajax.2.0.20710.nupkg.sha512"
     },
     "Microsoft.NET.Test.Sdk/16.9.4": {
       "type": "package",
@@ -5415,17 +5498,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.Extensions.FileProviders.Composite/3.1.0.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.Extensions.FileProviders.Embedded/3.1.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

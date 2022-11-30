@@ -15,11 +15,26 @@ namespace Version2.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.3")
+                .HasAnnotation("ProductVersion", "3.1.31")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Version2.Models.DTR", b =>
+            modelBuilder.Entity("Version2.Data.Models.Company", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Companys");
+                });
+
+            modelBuilder.Entity("Version2.Data.Models.DTR", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,10 +87,12 @@ namespace Version2.Migrations
 
                     b.HasIndex("DTRHeadId");
 
+                    b.HasIndex("DTRSummaryId");
+
                     b.ToTable("DTR");
                 });
 
-            modelBuilder.Entity("Version2.Models.DTRHead", b =>
+            modelBuilder.Entity("Version2.Data.Models.DTRHead", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,7 +116,7 @@ namespace Version2.Migrations
                     b.ToTable("DTRHeads");
                 });
 
-            modelBuilder.Entity("Version2.Models.DTRSummary", b =>
+            modelBuilder.Entity("Version2.Data.Models.DTRSummary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -120,12 +137,19 @@ namespace Version2.Migrations
                     b.ToTable("DTRSummaries");
                 });
 
-            modelBuilder.Entity("Version2.Models.Employee", b =>
+            modelBuilder.Entity("Version2.Data.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Department")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EmployeeId")
                         .HasColumnType("nvarchar(max)");
@@ -141,7 +165,7 @@ namespace Version2.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("Version2.Models.Messages", b =>
+            modelBuilder.Entity("Version2.Data.Models.Messages", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,7 +183,7 @@ namespace Version2.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("Version2.Models.Rule", b =>
+            modelBuilder.Entity("Version2.Data.Models.Rule", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,11 +213,17 @@ namespace Version2.Migrations
                     b.ToTable("Rules");
                 });
 
-            modelBuilder.Entity("Version2.Models.DTR", b =>
+            modelBuilder.Entity("Version2.Data.Models.DTR", b =>
                 {
-                    b.HasOne("Version2.Models.DTRHead", null)
+                    b.HasOne("Version2.Data.Models.DTRHead", null)
                         .WithMany("Dtrs")
                         .HasForeignKey("DTRHeadId");
+
+                    b.HasOne("Version2.Data.Models.DTRSummary", null)
+                        .WithMany("dTRs")
+                        .HasForeignKey("DTRSummaryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.OwnsOne("ValueObjects.ValueObject.RateVO", "Rate", b1 =>
                         {

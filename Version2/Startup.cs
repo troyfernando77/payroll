@@ -14,6 +14,7 @@ using Version2.Application;
 using Version2.Framework;
 using Version2.Data.Models;
 using ServiceLifetime = Version2.Framework.ServiceLifetime;
+using AspNetCore.Unobtrusive.Ajax;
 
 namespace Version2
 {
@@ -32,6 +33,8 @@ namespace Version2
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             
             services.AddDbContext<Version2Dbcontext>(options => options.UseSqlServer("DefaultConnection"));
+            services.AddUnobtrusiveAjax(useCdn: true, injectScriptIfNeeded: false);
+
             ServiceLifetime.Add(services);
             AutoMapper.Add(services);
         }
@@ -42,6 +45,7 @@ namespace Version2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
             else
             {
@@ -53,7 +57,7 @@ namespace Version2
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseUnobtrusiveAjax();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

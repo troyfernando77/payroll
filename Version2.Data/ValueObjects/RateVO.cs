@@ -20,14 +20,14 @@ namespace ValueObjects.ValueObject
         {
 
         }
-        public RateVO(decimal rate, ISettings isettings, IOccassion occassion)
+        public RateVO(decimal rate, ISettings isettings, IOccassion occassion, bool hourlyrate=true)
         {
             if (rate < 0 )
                 rate = 0;
             if (rate > isettings.maxrate)
                 throw new InvalidOperationException($"Rate must be below {isettings.maxrate}");
             Rate = rate;
-            RateHr = rate / isettings.hrperday;
+            RateHr = hourlyrate? rate : rate / isettings.hrperday; 
             RatePct = occassion.RatePct;
             RateOTPct = occassion.RateOTPct;
             OccassionName = occassion.OccassionName;

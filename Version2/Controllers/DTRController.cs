@@ -8,6 +8,8 @@ using ValueObjects.ValueObject;
 using Version2.Application;
 using Version2.Framework;
 using Version2.Data.Models;
+using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Version2.Controllers
 {
@@ -27,30 +29,36 @@ namespace Version2.Controllers
         }
    
         public IActionResult CreateorEdit(CreateorEditDTRDto input)
-        {       
-
-            if (input.Id>0)
+        {
+            if (input.Id > 0)
                 input = _DTRAppService.createorEditDto(input.Id);
+            else
+            {
+                input.TimeIn = DateTime.Now;
+                input.TimeOut= DateTime.Now;
+            }
             return View(input);
         }
-        public IActionResult SelectEmployee(EmployeeDto employee)
-        {
-            var dtr = new CreateorEditDTRDto();
-            dtr.EmployeeId = employee.EmployeeId;
-            return RedirectToAction("CreateorEdit", dtr );
-        }
+       
 
         public async Task<RedirectToActionResult> Delete(int id)
         {
             await _DTRAppService.Delete(id);
             return RedirectToAction("Index");
         }
-        public async Task<RedirectToActionResult> Save(CreateorEditDTRDto msg)
+        public async Task<ActionResult> Save(CreateorEditDTRDto msg)
         {
-            
-            await _DTRAppService.CreateorEdit(msg);
+            msg.TimeIn = ClassDate.GetDate(msg.TimeIn, msg.TimeInTime);
+            msg.TimeOut = ClassDate.GetDate(msg.TimeOut, msg.TimeOutTime);
+            var dto = await _DTRAppService.CreateorEdit(msg);
+            if (dto.isFailed)
+            {
+                var req= BadRequest(dto.Message);
+                return req;
+            }
             return RedirectToAction("Index");
         }
+        
         
     }
 }

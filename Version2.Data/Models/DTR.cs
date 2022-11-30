@@ -35,15 +35,19 @@ namespace Version2.Data.Models
         public DateTime TimeOut { get;   set; }
         public decimal TotalHours { get; private set; }
         public decimal RegularHours { get; private set; }
-        public RateVO Rate { get; set; }
+        public decimal Rate { get; set; }
         public decimal TotalOT { get; private set; }
         public decimal Amount { get; private set; }
         public decimal OTAmount { get; set; }
         public decimal Deduction { get; private set; }
         public decimal NetPay { get; private set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeId { get; set; }
+        public string  EmployeeName { get; set; }
+        public string EmployeeId { get; set; } 
+
         public decimal Reghoursperday { get; private set; }
+        public string TimeInTime { get; set; }
+        public string TimeOutTime { get; set; }
+        public string  Company { get; set; }
 
     }
     public class DTR :Entity
@@ -65,13 +69,12 @@ namespace Version2.Data.Models
         public decimal Reghoursperday { get; private set; }
         protected DTR()
         { }
-        protected DTR(DateTime timeIn, DateTime timeOut, EmployeeDto employee,
+        protected DTR(DateTime timeIn, DateTime timeOut, Employee employee,
             decimal reghoursperday   )
         {
             TimeIn = timeIn;
-           
             EmployeeName = employee.EmployeeName;
-
+            EmployeeId = employee.EmployeeId;
             Rate = new RateVO(employee.Rate, new Settings(), Occassion.RegularOccassion());
             TimeOut = timeOut;
             Reghoursperday = reghoursperday;
@@ -79,10 +82,14 @@ namespace Version2.Data.Models
             ComputeOTHours();
             
         }
-        public static Result<DTR> Create(DateTime timeIn, DateTime timeOut, EmployeeDto employee)
+        public static Result<DTR> Create(DateTime timeIn, DateTime timeOut, Employee employee)
         {
             if (!isTimeinLessTimeOut(timeIn,timeOut))
                 return Result.Failed<DTR>("Timeout is less than timein");
+            if (timeIn == timeOut)
+                return Result.Failed<DTR>("Timein and Timeout should not be equal");
+            if (employee == null || employee.EmployeeId == null)
+                return Result.Failed<DTR>("Employee Required");
             return Result.Ok(new DTR(timeIn, timeOut, employee, new Settings().hrperday ));
         }
         private static bool isTimeinLessTimeOut(DateTime timein, DateTime timeout)

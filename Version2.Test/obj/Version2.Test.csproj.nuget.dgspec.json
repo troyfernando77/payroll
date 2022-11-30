@@ -371,6 +371,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AspNetCore.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.0, )"
@@ -396,6 +400,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.3, )"
+            },
+            "jQuery.Ajax.Unobtrusive": {
+              "target": "Package",
+              "version": "[2.0.20710, )"
             }
           },
           "imports": [

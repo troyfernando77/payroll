@@ -555,9 +555,7 @@ C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\M
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
@@ -898,3 +896,6 @@ C:\Users\troy\repos\Payroll\payroll\Version2.Test\obj\Debug\netcoreapp3.1\Versio
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\obj\Debug\netcoreapp3.1\Version2.Test.dll
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\obj\Debug\netcoreapp3.1\Version2.Test.pdb
 C:\Users\troy\repos\Payroll\payroll\Version2.Test\obj\Debug\netcoreapp3.1\Version2.Test.genruntimeconfig.cache
+C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\AspNetCore.Unobtrusive.Ajax.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\troy\repos\Payroll\payroll\Version2.Test\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll

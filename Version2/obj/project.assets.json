@@ -2,6 +2,25 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "3.1.22"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "AutoMapper/12.0.0": {
         "type": "package",
         "dependencies": {
@@ -29,6 +48,15 @@
         },
         "runtime": {
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "jQuery/1.4.4": {
+        "type": "package"
+      },
+      "jQuery.Ajax.Unobtrusive/2.0.20710": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.jQuery.Unobtrusive.Ajax": "2.0.20613"
         }
       },
       "Microsoft.AspNetCore.Mvc.Razor.Extensions/3.1.30": {
@@ -536,6 +564,44 @@
           }
         }
       },
+      "Microsoft.Extensions.FileProviders.Abstractions/3.1.22": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.22"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/3.1.22": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "3.1.22"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/_._": {}
+        }
+      },
       "Microsoft.Extensions.Logging/3.1.31": {
         "type": "package",
         "dependencies": {
@@ -625,6 +691,12 @@
           "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/2.0.20710": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "[1.4.4, 2.0.0)"
         }
       },
       "Microsoft.NETCore.Platforms/2.1.2": {
@@ -1811,6 +1883,30 @@
     }
   },
   "libraries": {
+    "AspNetCore.Unobtrusive.Ajax/2.0.0": {
+      "sha512": "hFzcqL7PWw1shrtFlm/2vUlToGruTXSijq60M4FI+0C5KKI+q2oRk0InPcO8jyuC9/nEtsLX20D1sDwhLNFeNw==",
+      "type": "package",
+      "path": "aspnetcore.unobtrusive.ajax/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aspnetcore.unobtrusive.ajax.2.0.0.nupkg.sha512",
+        "aspnetcore.unobtrusive.ajax.nuspec",
+        "icon.png",
+        "lib/net5.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/net5.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/net6.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/net6.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp2.1/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp2.1/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp2.2/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp2.2/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp3.0/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp3.0/AspNetCore.Unobtrusive.Ajax.xml",
+        "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.dll",
+        "lib/netcoreapp3.1/AspNetCore.Unobtrusive.Ajax.xml"
+      ]
+    },
     "AutoMapper/12.0.0": {
       "sha512": "0Rmg0zI5AFu1O/y//o9VGyhxKjhggWpk9mOA1tp0DEVx40c61bs+lnQv+0jUq8XbniF7FKgIVvI1perqiMtLrA==",
       "type": "package",
@@ -1838,6 +1934,31 @@
         "automapper.extensions.microsoft.dependencyinjection.nuspec",
         "icon.png",
         "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
+    "jQuery/1.4.4": {
+      "sha512": "kexCeYIZehR5fRjo8CK1sngN5SZEQRFNfCYZHMS1RxwEEiSKetBw/gliYJcLJdJEBB+e9aHqleLCjuaSI7u23g==",
+      "type": "package",
+      "path": "jquery/1.4.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-1.4.4-vsdoc.js",
+        "Content/Scripts/jquery-1.4.4.js",
+        "Content/Scripts/jquery-1.4.4.min.js",
+        "jquery.1.4.4.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "jQuery.Ajax.Unobtrusive/2.0.20710": {
+      "sha512": "Pi9soMRdzL30AMb/gXPLjTLzjYs3/Ac0S51h4M28Iyc4rYQ4ln1fZxPTEmEbnUYRZzuP2b5P2saBq9llJ1e1tg==",
+      "type": "package",
+      "path": "jquery.ajax.unobtrusive/2.0.20710",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jquery.ajax.unobtrusive.2.0.20710.nupkg.sha512",
+        "jquery.ajax.unobtrusive.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Mvc.Razor.Extensions/3.1.30": {
@@ -2417,6 +2538,43 @@
         "microsoft.extensions.dependencymodel.nuspec"
       ]
     },
+    "Microsoft.Extensions.FileProviders.Abstractions/3.1.22": {
+      "sha512": "bb7fvafHZkCURAbDkDcizqqYfuRb7/wpwraEisxMxqHwMUMNUaGZGO7+PPa5FJCiycgzdlF3zbKbecZUufJU3g==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.abstractions/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "microsoft.extensions.fileproviders.abstractions.3.1.22.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/3.1.22": {
+      "sha512": "4hTeyTOT11sAxbYpvWa0C5AztrcdQTOUdhWN+NW+G3UPVaUziF/JIQWBW/yE2dy5zXJJW9MTYgAsNPtAFH79EA==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.embedded/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.props",
+        "build/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.targets",
+        "buildMultiTargeting/Microsoft.Extensions.FileProviders.Embedded.props",
+        "buildMultiTargeting/Microsoft.Extensions.FileProviders.Embedded.targets",
+        "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "microsoft.extensions.fileproviders.embedded.3.1.22.nupkg.sha512",
+        "microsoft.extensions.fileproviders.embedded.nuspec",
+        "tasks/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.Manifest.Task.dll"
+      ]
+    },
     "Microsoft.Extensions.Logging/3.1.31": {
       "sha512": "oGzj3EsjxQss8WD2mPnwk+kr8V4vSjkkIAL/TjUcledv26liAnq85ZjMjSCPMkuaTpnngZ80XNIlIqVjLyQOsg==",
       "type": "package",
@@ -2531,6 +2689,19 @@
         "ref/uap10.0/Microsoft.Identity.Client.xml",
         "ref/xamarinmac20/Microsoft.Identity.Client.dll",
         "ref/xamarinmac20/Microsoft.Identity.Client.xml"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/2.0.20710": {
+      "sha512": "qe7300U7GFkYuncm2cCR/Lj8xexvYlGYIjvb857N1oLpGXUmHIqmWl7cCajV0BkQ0V+jRqadfqf2znLsAZ3KLg==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.ajax/2.0.20710",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "microsoft.jquery.unobtrusive.ajax.2.0.20710.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.ajax.nuspec"
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
@@ -5859,6 +6030,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "AspNetCore.Unobtrusive.Ajax >= 2.0.0",
       "AutoMapper >= 12.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.30",
@@ -5867,7 +6039,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.3",
       "Version2.Application >= 1.0.0",
       "Version2.Data >= 1.0.0",
-      "Version2.Framework >= 1.0.0"
+      "Version2.Framework >= 1.0.0",
+      "jQuery.Ajax.Unobtrusive >= 2.0.20710"
     ]
   },
   "packageFolders": {
@@ -5930,6 +6103,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "AspNetCore.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "AutoMapper": {
             "target": "Package",
             "version": "[12.0.0, )"
@@ -5955,6 +6132,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[3.0.3, )"
+          },
+          "jQuery.Ajax.Unobtrusive": {
+            "target": "Package",
+            "version": "[2.0.20710, )"
           }
         },
         "imports": [
@@ -5985,5 +6166,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "jQuery.Ajax.Unobtrusive 2.0.20710 depends on Microsoft.jQuery.Unobtrusive.Ajax (>= 2.0.20613) but Microsoft.jQuery.Unobtrusive.Ajax 2.0.20613 was not found. An approximate best match of Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710 was resolved.",
+      "libraryId": "Microsoft.jQuery.Unobtrusive.Ajax",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

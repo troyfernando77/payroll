@@ -27,6 +27,7 @@ namespace Version2.Framework
         public DbSet<Employee> Employees { get; set; }
         public DbSet<DTRSummary> DTRSummaries { get; set; }
         public DbSet<DTRHead> DTRHeads { get; set; }
+        public DbSet<Company> Companys { get; set; }
 
     }
 }

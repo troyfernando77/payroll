@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Version2.Application;
+using Version2.Data;
 using Version2.Data.Interface;
 using Version2.Data.Models;
 using Version2.Framework;
@@ -12,7 +14,7 @@ namespace Version2.Application
 
     public interface IDTRAppService : ICompleteWork
     {
-        Task CreateorEdit(CreateorEditDTRDto product);
+        Task<Result> CreateorEdit(CreateorEditDTRDto product);
         Task Delete(int id);
         DTRDto Get(int id);
         Task<List<DTRDto>> GetAll();
@@ -37,39 +39,49 @@ namespace Version2.Application
             this._employeeAppService = employeeAppService;
         }
 
-        public async Task CreateorEdit(CreateorEditDTRDto input)
+        public async Task<Result> CreateorEdit(CreateorEditDTRDto input)
         {
             if (input.Id == 0)
             {
-                await Create(input);
+                return await Create(input);
             }
             else
             {
-                await Update(input);
+                return await Update(input);
             }
 
         }
       
-        protected async Task Create(CreateorEditDTRDto input)
+        protected async Task<Result> Create(CreateorEditDTRDto input)
         {
-            var employee = _employeeAppService.Get(new GetEmployee() { EmpCode = input.EmployeeId });
-            var messages = DTR.Create(input.TimeIn, input.TimeOut, employee);
+            var employee = Employee.Create(input.EmployeeId,
+                input.EmployeeName,
+                input.Rate, input.Company);
+             var messages = DTR.Create(input.TimeIn, input.TimeOut, employee.Value);
             if (messages.isFailed)
             {
-                throw new System.Exception(messages.Message);
+                return Result.Failed(messages.Message);
             }
             else
             {
                 await _DTRRepository.Add(messages.Value);
                 await Complete();
             }
+            return Result.Ok();
         }
-        protected async Task Update(CreateorEditDTRDto input)
+        protected async Task<Result> Update(CreateorEditDTRDto input)
         {
             DTR dtr = _DTRRepository.GetAll().Where(m => m.Id == input.Id).FirstOrDefault();
             _mapper.Map(input, dtr);
-            await _DTRRepository.Update(dtr);
-            
+            try
+            {
+                await _DTRRepository.Update(dtr);
+            }
+            catch (Exception err)
+            {
+                return Result.Failed(err.Message);
+            }
+            return Result.Ok();
         }
         public DTRDto Get(int id)
         {

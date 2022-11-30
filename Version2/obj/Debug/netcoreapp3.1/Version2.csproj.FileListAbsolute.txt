@@ -487,9 +487,7 @@ C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Micros
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Configuration.Xml.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\refs\Microsoft.Extensions.Hosting.Abstractions.dll
@@ -787,3 +785,9 @@ C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.dl
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.pdb
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Version2.genruntimeconfig.cache
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\GetEmployees\GetEmployees.cshtml.g.cs
+C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\AspNetCore.Unobtrusive.Ajax.dll
+C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Company\Index.cshtml.g.cs
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Company\CreateorEdit.cshtml.g.cs
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CompanyDropdown\CompanyDropdown.cshtml.g.cs

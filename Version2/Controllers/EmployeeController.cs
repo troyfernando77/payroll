@@ -35,9 +35,15 @@ namespace Version2.Controllers
             await _EmployeeAppService.Delete(id);
             return RedirectToAction("Index");
         }
-        public async Task<RedirectToActionResult> Save(CreateorEditEmployeeDto msg)
+        public async Task<ActionResult> Save(CreateorEditEmployeeDto msg)
         {
-            await _EmployeeAppService.CreateorEdit(msg);
+            try
+            {
+                await _EmployeeAppService.CreateorEdit(msg);
+            }catch(Exception err)
+            {
+                return BadRequest(err.Message);
+            }
             return RedirectToAction("Index");
         }
         public async Task<PartialViewResult> GetEmployees(int dtrheadid)

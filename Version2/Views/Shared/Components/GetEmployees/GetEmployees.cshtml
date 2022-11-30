@@ -1,44 +1,62 @@
 ﻿@using Version2.Data.Models
 @model EmployeeDto[]
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Select</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered" style="font-size:small">
+                    <thead>
+                        <tr>
+                            <th scope="col">Employee</th>
+                            <th scope="col"></th>
 
-   
-    <table class="table table-bordered" style="font-size:small">
-        <thead>
-            <tr>
-                <th scope="col">Employee</th>
-                <th scope="col"></th>
-            
-            </tr>
-        </thead>
-        <tbody>
-            @for (var i = 0; i < Model.Count(); i++)
-            {
-            @using (Html.BeginForm("SelectEmployee","DTR", FormMethod.Post))
-            {
-                @Html.HiddenFor(m=>m[i].Id)
-                
-                <tr>
-                    <input type="hidden" name="EmployeeId" value=@Model[i].EmployeeId >
-                    <td class="col-md-3 ">
-                        @Model[i].EmployeeName
-                    </td>
-                    <td><input type="submit" value="Select"></td>
-                </tr>
-            }
-            }
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="10">
-                    <div class="row">
-                        <div class="col-9"></div>
-                        <div class="col-3">
-                            <input type="submit" value="Save" /> 
-                            <input type="button" value="Cancel" /></div>
-                    
-                    </div>
-                </td>
-            </tr>
-        </tfoot>
-    </table>
-} 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Count(); i++)
+                        {
+                                <tr>
+                                    <td class="col-md-6 ">
+                                        @Model[i].EmployeeName
+                                    </td>
+                                <td class="col-md-1"><input type="button"
+                                       onclick="OnSuccessSelect(
+                                        '@Model[i].EmployeeId',
+                                        '@Model[i].EmployeeName',
+                                        '@Model[i].Rate')"
+                                       value="Select">
+                                </td>
+                                </tr>
+                            @*}*@
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+  
+    function OnSuccessSelect(empid, empname, rate) 
+    {   
+        document.getElementById('EmployeeName').value=empname;
+        document.getElementById('EmployeeId').value = empid;
+        document.getElementById('Rate').value = rate;
+        Hide();
+    }
+    function Hide()
+    {
+        $("#Modal").modal("hide");
+    }
+</script>
+ 

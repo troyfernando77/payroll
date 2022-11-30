@@ -1,0 +1,4 @@
+﻿@using Version2.Data.Models
+@model IEnumerable<SelectListItem>
+@Html.DropDownList("Company",Model,"Select Company",
+                    new { @class = "form-control" }) 

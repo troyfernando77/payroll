@@ -128,9 +128,7 @@ C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Ou
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Configuration.Xml.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\refs\Microsoft.Extensions.Hosting.Abstractions.dll
@@ -309,6 +307,7 @@ C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Ou
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Version2.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Version2.runtimeconfig.json
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Version2.pdb
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\AspNetCore.Unobtrusive.Ajax.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\AutoMapper.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
@@ -332,6 +331,8 @@ C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Ou
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.DependencyModel.dll
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.Extensions.Options.dll

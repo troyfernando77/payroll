@@ -1,42 +1,91 @@
 ﻿@using Version2.Data.Models
 @model CreateorEditDTRDto
-    @using (Html.BeginForm("Save", "DTR", FormMethod.Post))
-    {
-        @Html.Hidden("Id", Model.Id)
-        <div class="row">
-            <div class="col-md-2">
-                Employee  Code:
+@using (Html.AjaxBeginForm("Save", "DTR",
+new AjaxOptions
+{
+    OnFailure = "OnFailure",
+    OnSuccess = "OnSuccess",
+    HttpMethod= "Post"
+}))
+{ 
+    
+    @Html.Hidden("Id", Model.Id)
+    <div class=" align-self-centercontainer-fluid col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                <label for="exampleInputEmail1">Employee :</label>
             </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <input type="hidden" name="EmployeeId" id="EmployeeId" value="@Model.EmployeeId" required />
+                        <input type="hidden" name="Rate" id="Rate" value="@Model.Rate" required />
+                        <div class="col-md-9">
+                            <input class="form-control" id="EmployeeName" type="text" name="EmployeeName" 
+                            value="@Model.EmployeeName" required readonly />
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-primary" id="showmodal" data-toggle="modal" data-target="#Modal">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Employee Time In :
+                </div>
             <div class="col-md-6">
-            <input type="text" name="EmployeeId" value="@Model.EmployeeId" required />
+                <input  type="date" name="TimeIn" value="@Model.TimeIn.ToString("yyyy-MM-dd")" required />
+                <input   type="time" name="TimeInTime" required />
+                </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Employee Time Out :
+                </div>
+                <div class="col-md-6">
+                <input type="date" name="TimeOut" value="@Model.TimeOut.ToString("yyyy-MM-dd")" required />
+                <input type="time" name="TimeOutTime"  required />
+                </div>
+            </div>
         <div class="row">
             <div class="col-md-2">
-                Employee Time In :
+                
             </div>
-            <div class="col-md-6">
-            <input type="datetime" name="TimeIn" value="@Model.TimeIn" required />
+            <div class="col-md-3">
+                <div id="Productresult" class="alert-danger"></div>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col-md-2">
-                Employee Time Out :
-            </div>
-            <div class="col-md-6">
-            <input type="datetime" name="TimeOut" value="@Model.TimeOut" required />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-2">
                
-            </div>
-            <div class="col-md-2">
-                <input class="btn btn-primary" type="submit" value="Save" />
-                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "DTR" )>Cancel</a>    
-            </div>
+                </div>
+                <div class="col-md-10">
+                    <input class="btn btn-primary" type="submit" value="Save" />
+                    <a class="btn btn-danger" href=@Url.ActionLink( "Index", "DTR" )>Cancel</a>    
+                </div>
             
+            </div>
         </div>
-    }
-   
+   } 
 @await Component.InvokeAsync("GetEmployees")
+
+ <script type="text/javascript">
+ 
+    document.onreadystatechange = () => {
+        if (document.readyState === "complete") {
+            $('#showmodal').click();
+        }
+    };
+    function OnFailure (response) 
+    {
+        $('#Productresult').text(response.responseText );
+    } 
+    function OnSuccess(response) {
+        window.location.href = "@Url.ActionLink( "Index", "DTR" )"
+    }
+    
+    
+ </script>

@@ -25,9 +25,15 @@ namespace Version2
                   cfg.CreateMap<DTRHead, DTRHeadDTO>().ReverseMap();
                   cfg.CreateMap<DTRHead, CreateorEditDTRHeadDTO>().ReverseMap();
                   cfg.CreateMap<DTRHeadDTO, CreateorEditDTRHeadDTO>().ReverseMap();
+
                   cfg.CreateMap<DTRSummary, DTRSummaryDto>().ReverseMap();
                   cfg.CreateMap<DTRSummary, CreateorEditDTRSummaryDto>().ReverseMap();
                   cfg.CreateMap<DTRSummaryDto, CreateorEditDTRSummaryDto>().ReverseMap();
+
+                  cfg.CreateMap<Company, CompanyDto>().ReverseMap();
+                  cfg.CreateMap<Company, CreateorEditCompanyDto>().ReverseMap();
+                  cfg.CreateMap<CompanyDto, CreateorEditCompanyDto>().ReverseMap();
+
               });
         }
     }
