@@ -1,4 +1,6 @@
-﻿ 
+﻿
+
+using Version2.Data.Interface;
 
 namespace Version2.Data.Models
 {

@@ -151,10 +151,10 @@ namespace Version2.Migrations
                     b.Property<string>("Department")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmployeeId")
+                    b.Property<string>("EmployeeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("EmployeeNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Rate")
@@ -163,6 +163,24 @@ namespace Version2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("Version2.Data.Models.EmployeeLedgerHd", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployeeLedgerHds");
                 });
 
             modelBuilder.Entity("Version2.Data.Models.Messages", b =>
@@ -213,6 +231,24 @@ namespace Version2.Migrations
                     b.ToTable("Rules");
                 });
 
+            modelBuilder.Entity("Version2.Data.Models.TransYear", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TransYears");
+                });
+
             modelBuilder.Entity("Version2.Data.Models.DTR", b =>
                 {
                     b.HasOne("Version2.Data.Models.DTRHead", null)
@@ -259,6 +295,81 @@ namespace Version2.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("DTRId");
+                        });
+                });
+
+            modelBuilder.Entity("Version2.Data.Models.EmployeeLedgerHd", b =>
+                {
+                    b.OwnsOne("ValueObjects.ValueObject.Amount_Balance", "ConsultationLabDiagnostic", b1 =>
+                        {
+                            b1.Property<int>("EmployeeLedgerHdId")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<decimal>("Amount")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Availed")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Balance")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.HasKey("EmployeeLedgerHdId");
+
+                            b1.ToTable("EmployeeLedgerHds");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EmployeeLedgerHdId");
+                        });
+
+                    b.OwnsOne("ValueObjects.ValueObject.Amount_Balance", "Hospitalization", b1 =>
+                        {
+                            b1.Property<int>("EmployeeLedgerHdId")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<decimal>("Amount")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Availed")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Balance")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.HasKey("EmployeeLedgerHdId");
+
+                            b1.ToTable("EmployeeLedgerHds");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EmployeeLedgerHdId");
+                        });
+
+                    b.OwnsOne("ValueObjects.ValueObject.Amount_Balance", "Medicines", b1 =>
+                        {
+                            b1.Property<int>("EmployeeLedgerHdId")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int")
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<decimal>("Amount")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Availed")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.Property<decimal>("Balance")
+                                .HasColumnType("decimal(18,2)");
+
+                            b1.HasKey("EmployeeLedgerHdId");
+
+                            b1.ToTable("EmployeeLedgerHds");
+
+                            b1.WithOwner()
+                                .HasForeignKey("EmployeeLedgerHdId");
                         });
                 });
 #pragma warning restore 612, 618

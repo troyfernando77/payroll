@@ -49,7 +49,7 @@ namespace Version2.Application
         protected async Task Create(CreateorEditEmployeeDto input)
         {
             //var messages = _mapper.Map<Employee>(input);
-            var employee = Employee.Create(input.EmployeeId, input.EmployeeName,
+            var employee = Employee.Create(input.EmployeeNumber, input.EmployeeName,
                 input.Rate, input.Company);
             await _EmployeeRepository.Add(employee.Value);
             await Complete();
@@ -65,7 +65,7 @@ namespace Version2.Application
         {
             Employee log = _EmployeeRepository.GetAll()
                 .WhereIf(getEmployee.Id.HasValue, m => m.Id == getEmployee.Id)
-                .WhereIf(string.IsNullOrEmpty(getEmployee.EmpCode) == false, m => m.EmployeeId == getEmployee.EmpCode)
+                .WhereIf(string.IsNullOrEmpty(getEmployee.EmpCode) == false, m => m.EmployeeNumber == getEmployee.EmpCode)
                 .FirstOrDefault();
             var msgdto = _mapper.Map<EmployeeDto>(log);
             return msgdto;
@@ -88,7 +88,7 @@ namespace Version2.Application
                                   select new EmployeeDto()
                                   {
                                        Id = a.Id,
-                                       EmployeeId = a.EmployeeId,
+                                       EmployeeNumber = a.EmployeeNumber,
                                        EmployeeName = a.EmployeeName,
                                        Rate = a.Rate ,
                                        Company = a.Company,

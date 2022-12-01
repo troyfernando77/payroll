@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using ValueObjects.ValueObject;
- 
+using Version2.Data.Interface;
 
 namespace Version2.Data.Models
 {
@@ -11,7 +11,7 @@ namespace Version2.Data.Models
     }
     public class Employee : Entity, IEntity
     {
-        public string EmployeeId { get; set; }
+        public string EmployeeNumber { get; set; }
         public string EmployeeName { get; set; }
         public decimal  Rate { get; set; }
         [Required]
@@ -21,7 +21,7 @@ namespace Version2.Data.Models
             string company)
         {
             var emp = new Employee();
-            emp.EmployeeId = empid;
+            emp.EmployeeNumber = empid;
             emp.EmployeeName = empname;
             emp.Rate = rate;
             emp.Company = company;
@@ -33,7 +33,7 @@ namespace Version2.Data.Models
     }
     public class CreateorEditEmployeeDto : Entity
     {
-        public string EmployeeId { get; set; }
+        public string EmployeeNumber { get; set; }
         public string EmployeeName { get; set; }
         public decimal Rate { get; set; }
         public string Company { get; set; }
@@ -42,7 +42,7 @@ namespace Version2.Data.Models
     public class EmployeeDto : Entity
     {
         [Required]
-        public string EmployeeId { get; set; }
+        public string EmployeeNumber { get; set; }
         [Required]
         public string EmployeeName { get; set; } = "";
         public decimal Rate { get; set; }

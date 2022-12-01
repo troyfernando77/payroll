@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
- 
+using Version2.Data.Interface;
 
 namespace Version2.Data.Models
 {

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using ValueObjects.ValueObject;
- 
+using Version2.Data.Interface;
 
 namespace Version2.Data.Models
 {

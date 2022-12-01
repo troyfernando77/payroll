@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ValueObjects.ValueObject;
- 
+using Version2.Data.Interface;
 
 namespace Version2.Data.Models
 {
@@ -74,7 +74,7 @@ namespace Version2.Data.Models
         {
             TimeIn = timeIn;
             EmployeeName = employee.EmployeeName;
-            EmployeeId = employee.EmployeeId;
+            EmployeeId = employee.EmployeeNumber;
             Rate = new RateVO(employee.Rate, new Settings(), Occassion.RegularOccassion());
             TimeOut = timeOut;
             Reghoursperday = reghoursperday;
@@ -88,7 +88,7 @@ namespace Version2.Data.Models
                 return Result.Failed<DTR>("Timeout is less than timein");
             if (timeIn == timeOut)
                 return Result.Failed<DTR>("Timein and Timeout should not be equal");
-            if (employee == null || employee.EmployeeId == null)
+            if (employee == null || employee.EmployeeNumber == null)
                 return Result.Failed<DTR>("Employee Required");
             return Result.Ok(new DTR(timeIn, timeOut, employee, new Settings().hrperday ));
         }

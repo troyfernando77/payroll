@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
- 
+using Version2.Data.Interface;
+
 namespace Version2.Data.Models
 {
     public class Messages : Entity

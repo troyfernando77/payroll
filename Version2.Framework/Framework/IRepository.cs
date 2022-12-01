@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Version2.Data.Models;
+using Version2.Data.Interface;
 
 namespace Version2.Framework
 {
-    
+
     public class Entity : IEntity
     {
         public int Id { get; set; }

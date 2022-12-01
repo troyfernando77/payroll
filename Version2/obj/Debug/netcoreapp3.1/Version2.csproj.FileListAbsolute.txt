@@ -791,3 +791,5 @@ C:\Users\troy\repos\Payroll\payroll\Version2\bin\Debug\netcoreapp3.1\Microsoft.E
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Company\Index.cshtml.g.cs
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Company\CreateorEdit.cshtml.g.cs
 C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CompanyDropdown\CompanyDropdown.cshtml.g.cs
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\TransYear\Index.cshtml.g.cs
+C:\Users\troy\repos\Payroll\payroll\Version2\obj\Debug\netcoreapp3.1\Razor\Views\TransYear\CreateorEdit.cshtml.g.cs

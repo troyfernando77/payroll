@@ -34,6 +34,10 @@ namespace Version2
                   cfg.CreateMap<Company, CreateorEditCompanyDto>().ReverseMap();
                   cfg.CreateMap<CompanyDto, CreateorEditCompanyDto>().ReverseMap();
 
+                  cfg.CreateMap<TransYear, TransYearDto>().ReverseMap();
+                  cfg.CreateMap<TransYear, CreateorEditTransYearDto>().ReverseMap();
+                  cfg.CreateMap<TransYearDto, CreateorEditTransYearDto>().ReverseMap();
+
               });
         }
     }

@@ -1,0 +1,67 @@
+﻿@using Version2.Data.Models
+@model CreateorEditTransYearDto
+
+@using (Html.AjaxBeginForm("Save", "TransYear", new AjaxOptions
+ {
+     OnFailure = "OnFailure",
+     OnSuccess = "OnSuccess"
+ }
+))
+{
+    @Html.Hidden("Id", Model.Id)
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1">
+                <label class="form-label">Year  </label>
+            </div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" name="Year" value="@Model.Year" required />
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-1">
+                    <label class="form-label">Status  </label>
+                </div>
+                <div class="col-md-6">
+                     <input type="radio" name="Status" value=0     @{Write(Model.Status== Version2.Data.Enum.Status.OPEN ?"checked":"");} /> Open
+                <input type="radio" name="Status" value=1 @{Write(Model.Status== Version2.Data.Enum.Status.CLOSED   ?"checked":"");} /> Closed
+                </div>
+                <div >
+                   
+
+                </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-6">
+                <div id="result" class="alert-danger"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                <input class="btn btn-primary" type="submit" value="Save" />
+                <a class="btn btn-danger" href=@Url.ActionLink( "Index", "TransYear" )>Cancel</a>
+            </div>
+
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+
+    function OnFailure(response) {
+        $('#result').text(response.responseText);
+    }
+    function OnSuccess(response) {
+        window.location.href = "@Url.ActionLink( "Index", "TransYear" )"
+    }
+</script>
+
+
+
+

@@ -17,6 +17,7 @@ namespace Version2.Framework
             services.AddScoped<IRepository<DTRHead>, Repository<DTRHead>>();
             services.AddScoped<IRepository<DTRSummary>, Repository<DTRSummary>>();
             services.AddScoped<IRepository<Company>, Repository<Company>>();
+            services.AddScoped<IRepository<TransYear>, Repository<TransYear>>();
 
             services.AddScoped<MessagesAppService>();
             services.AddScoped<RulesAppService>();
@@ -28,6 +29,8 @@ namespace Version2.Framework
             services.AddScoped<IDTRSummaryAppService, DTRSummaryAppService>();
             services.AddScoped<ICompanyAppService, CompanyAppService>();
 
+            services.AddScoped<ITransYearAppService, TransYearAppService>();
+           
         }
         
     }
